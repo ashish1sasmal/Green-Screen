@@ -10,7 +10,7 @@ cv2.namedWindow('Out', cv2.WINDOW_AUTOSIZE)
 def nothing(x):
     pass
 
-cv2.createTrackbar('Value','Out',0,255,nothing)
+cv2.createTrackbar('Value','Out',50,255,nothing)
 
 vid = cv2.VideoCapture(sys.argv[1])
 
@@ -39,6 +39,6 @@ while(1):
     v = cv2.getTrackbarPos('Value','Out')
     res = conv(img,bg,v)
     cv2.imshow('Out',res)
-    k = cv2.waitKey(1) & 0xFF
+    k = cv2.waitKey(50) & 0xFF
     if k == 27:
         break
